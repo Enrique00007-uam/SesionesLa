@@ -2,6 +2,7 @@
 
 using namespace std;
 
+void imprimirNum();
 int main(int argc, char const *argv[])
 {
     imprimirNum();
