@@ -2,19 +2,16 @@
 
 using namespace std;
 
-void imprimirNum()
+/*mostar los nuemros del 100 al 80*/
+
 int main(int argc, char const *argv[])
 {
-    imprimirNum();
-
+    int i = 100;
+    while (i >= 80)
+    {
+        cout << i << endl;
+        i--;
+    }
+    
     return 0;
 }
-
-void imprimirNum(){
-    for(int i = 9; i<=0; i--){
-
-        cout << i << endl;
-    }
-}
-
-
