@@ -7,7 +7,7 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
-    int numero, Nmultiplicacion, resultado;
+    int numero, resultado;
     int i = 0;
     cout <<"ingresa de la tabla de multiplicacion: ";
     cin >> numero;
