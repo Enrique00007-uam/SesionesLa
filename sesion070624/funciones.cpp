@@ -17,9 +17,13 @@ CIUDAD buscar(int id);
 int menu();
 void principal();
 void pedirDatos();
+void mostarDatos();
+void buscarxid();
+
+
 
 void agregar(CIUDAD *c){
-    ciudades[pos] = *c;
+    ciudades[pos] = *c; 
     pos++;
 }
 
@@ -66,7 +70,7 @@ int menu(){
     cout << "4. Buscar \n";
     cout << "5. Mostrar Todo\n";
     cout << "6. Salir\n ";
-    cout << "Digite la opción ";
+    cout << "Digite la opcion ";
     cin >> op;
     return op;
 }
@@ -79,7 +83,14 @@ void principal(){
             case 1:
                 pedirDatos();
                 break;
-            case 6:
+                case 4:
+                buscarxid();
+                break;
+                case 5:
+                mostarDatos();
+                break;
+                
+              case 6:
                 cout << "Adios, mi tierno\n";
                 break;
             default:
@@ -96,11 +107,33 @@ void pedirDatos(){
     cout << "ID: ";
     cin >> ciudad.id;
     cout << "NOMBRE: ";
-    cin >> ciudad.nombre;
+    scanf(" %[^\n]", ciudad.nombre);
     cout << "DESCRIPCION: ";
-    cin >> ciudad.descripcion;
+    scanf(" %[^\n]", ciudad.descripcion);
     agregar(&ciudad);
     cout << "Registro Agregado....\n";
 }
 
+void mostarDatos(){
+    for (int i = 0; i < pos; i++)
+    {
+       cout <<"Id:"<< ciudades[i].id << endl;
+       cout <<"Nombre:"<< ciudades[i].nombre << endl;
+       cout <<"descipcion: "<< ciudades[i].descripcion << endl;
+    }
+}
+
+void buscarxid(){
+    int id;
+    cout <<"Dime el ID de la ciudad a buscar:";
+    cin >> id;
+    CIUDAD c;
+    c = buscar(id);
+    cout << "===================================" << endl;
+    cout << c.id << endl;
+    cout << c.nombre << endl;
+    cout << c.descripcion << endl;
+    cout << "===================================" << endl;
+
+}
 
